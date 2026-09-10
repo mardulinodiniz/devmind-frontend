@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Meu Dashboard | DevMind</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="Css/dashboard.css"
+    >
+
+</head>
+
+
+<body class="pagina-dashboard">
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                class="logo"
+                href="index.html"
+            >
+
+                <img
+                    src="assets/logo.png"
+                    alt="DevMind"
+                >
+
+            </a>
+
+
+            <!-- MENU -->
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="curso.html?id=1">
+                    Meu curso
+                </a>
+
+                <a href="sobre.html">
+                    Sobre
+                </a>
+
+            </nav>
+
+
+            <!-- USUÁRIO -->
+
+            <div class="user-chip">
+
+                <div
+                    class="avatar"
+                    id="avatarUsuario"
+                >
+                    A
+                </div>
+
+
+                <div class="usuario-resumo">
+
+                    <small>
+                        Aluno DevMind
+                    </small>
+
+                    <strong id="nomeUsuarioTopo">
+                        Aluno
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="btn btn-outline btn-sair"
+                    onclick="sair()"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="container dashboard">
+
+
+        <!-- BOAS-VINDAS -->
+
+        <section class="dash-top">
+
+            <div class="dash-boas-vindas">
+
+
+                <span class="etiqueta">
+                    SEU ESPAÇO DE APRENDIZAGEM
+                </span>
+
+
+                <h1>
+
+                    Olá,
+                    <span id="nomeUsuario">
+                        Aluno
+                    </span>
+                    👋
+
+                </h1>
+
+
+                <p>
+
+                    Continue construindo o seu caminho
+                    para dominar a tecnologia.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="dash-acao">
+
+                <a
+                    class="btn btn-primary"
+                    href="curso.html?id=1"
+                >
+
+                    Continuar aprendendo
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- MENSAGEM DE ERRO -->
+
+        <div
+            id="dashboardErro"
+            class="mensagem erro"
+        ></div>
+
+
+        <!-- =================================================
+             CARDS PRINCIPAIS
+        ================================================== -->
+
+        <section class="dash-cards">
+
+
+            <!-- PROGRESSO -->
+
+            <article class="panel panel-progresso">
+
+
+                <div class="card-topo">
+
+                    <div>
+
+                        <span class="etiqueta pequena">
+                            EVOLUÇÃO
+                        </span>
+
+                        <h2>
+                            Seu progresso
+                        </h2>
+
+                    </div>
+
+
+                    <div class="card-icone">
+
+                        📈
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="progresso-num"
+                    id="percentual"
+                >
+
+                    0%
+
+                </div>
+
+
+                <p
+                    id="aulasConcluidas"
+                    class="texto-secundario"
+                >
+
+                    Carregando progresso...
+
+                </p>
+
+
+                <div class="barra">
+
+                    <span
+                        id="barraProgresso"
+                    ></span>
+
+                </div>
+
+
+            </article>
+
+
+            <!-- ACESSO -->
+
+            <article class="panel panel-acesso">
+
+
+                <div class="card-topo">
+
+                    <div>
+
+                        <span class="etiqueta pequena">
+                            SEU PLANO
+                        </span>
+
+                        <h2>
+                            Seu acesso
+                        </h2>
+
+                    </div>
+
+
+                    <div class="card-icone">
+
+                        🔓
+
+                    </div>
+
+                </div>
+
+
+                <div class="acesso-info">
+
+
+                    <div class="acesso-item">
+
+                        <small>
+                            Curso atual
+                        </small>
+
+                        <strong id="cursoNome">
+                            Carregando...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="acesso-item">
+
+                        <small>
+                            Módulos liberados
+                        </small>
+
+                        <strong id="moduloMaximo">
+                            ...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="acesso-item status-item">
+
+                        <small>
+                            Status
+                        </small>
+
+                        <strong
+                            id="statusAcesso"
+                            class="status-acesso"
+                        >
+                            ...
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- CONTINUAR -->
+
+            <article class="panel panel-objetivo">
+
+
+                <span class="etiqueta pequena">
+                    OBJETIVO
+                </span>
+
+
+                <h2>
+
+                    Uma aula de cada vez.
+
+                </h2>
+
+
+                <p>
+
+                    O conhecimento é construído
+                    com consistência. Continue
+                    de onde parou e avance.
+
+                </p>
+
+
+                <a
+                    href="curso.html?id=1"
+                    class="link-card"
+                >
+
+                    Ir para o curso →
+
+                </a>
+
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             CURSO ATUAL
+        ================================================== -->
+
+        <section class="curso-dashboard">
+
+
+            <div class="curso-dashboard-info">
+
+
+                <span class="etiqueta">
+                    SEU CURSO ATUAL
+                </span>
+
+
+                <h2>
+                    Estruturas de Dados
+                </h2>
+
+
+                <p>
+
+                    Domine estruturas fundamentais,
+                    algoritmos e conceitos essenciais
+                    para se tornar um programador
+                    mais preparado.
+
+                </p>
+
+
+                <a
+                    href="curso.html?id=1"
+                    class="btn btn-primary"
+                >
+
+                    Acessar curso
+                    <span>→</span>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="curso-dashboard-visual">
+
+
+                <div class="codigo-mini">
+
+                    <div class="codigo-mini-topo">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <pre><code>function evoluir() {
+
+    aprender();
+
+    praticar();
+
+    construir();
+
+}</code></pre>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             MÓDULOS
+        ================================================== -->
+
+        <section class="modulos-dashboard">
+
+
+            <div class="secao-cabecalho dashboard-secao-cabecalho">
+
+
+                <div>
+
+                    <span class="etiqueta">
+                        SUA JORNADA
+                    </span>
+
+
+                    <h2>
+                        Conteúdo do curso
+                    </h2>
+
+
+                </div>
+
+
+                <a
+                    href="curso.html?id=1"
+                    class="link-ver-todos"
+                >
+
+                    Ver curso completo →
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                id="listaModulos"
+                class="lista-modulos"
+            >
+
+                <div class="loading">
+
+                    Carregando módulos...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="footer-dashboard">
+
+        <div class="container">
+
+            <a
+                href="index.html"
+                class="logo-footer"
+            >
+
+                DevMind
+
+            </a>
+
+
+            <p>
+
+                Desenvolva a mente.
+                Construa o caminho para dominar
+                a tecnologia.
+
+            </p>
+
+
+            <span>
+
+                © 2026 DevMind.
+                Todos os direitos reservados.
+
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>

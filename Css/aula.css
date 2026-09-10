@@ -1,0 +1,385 @@
+:root{
+    --azul-900:#071c38;
+    --azul-800:#103058;
+    --azul-700:#174a84;
+    --azul-500:#2f78c4;
+    --azul-claro:#eaf3ff;
+    --branco:#ffffff;
+    --texto:#10243d;
+    --muted:#66758a;
+    --borda:#dbe3ed;
+    --fundo:#f5f8fc;
+    --sucesso:#168a4b;
+    --sombra:0 18px 50px rgba(7,28,56,.12);
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:100;
+    height:72px;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #dbe3ed;
+}
+
+.navbar .container{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+.navbar .logo{
+    display:flex;
+    align-items:center;
+    height:72px;
+    flex-shrink:0;
+}
+
+.navbar .logo img{
+    height:100px;
+    width:auto;
+    max-width:280px;
+    object-fit:contain;
+    display:block;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.acoes{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+@media(max-width:600px){
+    .logo img{
+        height:38px;
+        max-width:140px;
+    }
+    .navbar{
+    height:64px !important;
+}
+
+.navbar .container{
+    height:64px !important;
+    min-height:64px !important;
+}
+
+.navbar .logo{
+    width:150px !important;
+    height:50px !important;
+}
+
+.navbar .logo img{
+    width:100% !important;
+    height:100% !important;
+    max-width:150px !important;
+    max-height:50px !important;
+}
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--fundo);
+    color:var(--texto);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    height:72px;
+    padding:0 8%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--borda);
+}
+
+/* LOGO */
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:-1px;
+    color:var(--azul-900);
+}
+
+.logo::first-letter{
+    color:var(--azul-700);
+}
+
+/* MENU */
+
+.navbar nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.navbar nav a{
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    color:#526277;
+    transition:.2s;
+}
+
+.navbar nav a:hover{
+    color:var(--azul-700);
+}
+
+/* AÇÕES */
+
+.acoes{
+    display:flex;
+    align-items:center;
+}
+
+.btn-login{
+    padding:11px 20px;
+
+    border:0;
+    border-radius:9px;
+
+    background:var(--azul-800);
+    color:#fff;
+
+    font-weight:700;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-login:hover{
+    background:var(--azul-900);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   PÁGINA DA AULA
+========================= */
+
+.pagina-aula{
+    width:min(1120px, calc(100% - 40px));
+    margin:auto;
+    padding:38px 0 80px;
+}
+
+/* VOLTAR */
+
+.voltar{
+    display:inline-flex;
+    align-items:center;
+
+    margin-bottom:32px;
+
+    color:var(--azul-700);
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.voltar:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   CABEÇALHO DA AULA
+========================= */
+
+.aula-cabecalho{
+    max-width:800px;
+    margin-bottom:32px;
+}
+
+.etiqueta{
+    display:inline-flex;
+
+    padding:7px 12px;
+
+    border-radius:999px;
+
+    background:var(--azul-claro);
+    color:var(--azul-700);
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.8px;
+}
+
+.aula-cabecalho h1{
+    margin:16px 0 10px;
+
+    font-size:clamp(32px, 5vw, 48px);
+    line-height:1.1;
+
+    letter-spacing:-1.5px;
+    color:var(--azul-900);
+}
+
+.aula-cabecalho p{
+    margin:0;
+
+    font-size:17px;
+    color:var(--muted);
+}
+
+/* =========================
+   VÍDEO
+========================= */
+
+.video-container{
+    margin-top:28px;
+}
+
+.video-aula{
+    width:100%;
+    aspect-ratio:16/9;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:#081728;
+
+    border-radius:18px;
+
+    box-shadow:var(--sombra);
+}
+
+.video-aula iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.video-carregando{
+    color:#dce8f5;
+    font-size:15px;
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progresso-aula{
+    margin-top:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+
+    padding:28px;
+
+    background:#fff;
+
+    border:1px solid var(--borda);
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(7,28,56,.05);
+}
+
+.progresso-aula h2{
+    margin:12px 0 6px;
+
+    font-size:26px;
+    color:var(--azul-900);
+}
+
+.progresso-aula p{
+    margin:0;
+    color:var(--muted);
+}
+
+.btn-principal{
+    flex-shrink:0;
+
+    padding:14px 22px;
+
+    border:0;
+    border-radius:10px;
+
+    background:var(--azul-800);
+    color:#fff;
+
+    font-weight:700;
+    font-size:15px;
+
+    cursor:pointer;
+    transition:.2s;
+
+    box-shadow:0 10px 22px rgba(16,48,88,.18);
+}
+
+.btn-principal:hover{
+    background:var(--azul-900);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    .navbar{
+        height:64px;
+        padding:0 20px;
+    }
+
+    .navbar nav{
+        display:none;
+    }
+
+    .logo{
+        font-size:25px;
+    }
+
+    .pagina-aula{
+        width:min(100% - 28px, 1120px);
+        padding:28px 0 60px;
+    }
+
+    .progresso-aula{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .btn-principal{
+        width:100%;
+    }
+
+}

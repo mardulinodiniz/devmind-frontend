@@ -1,0 +1,1213 @@
+
+
+:root{
+    --azul-900:#071c38;
+    --azul-800:#103058;
+    --azul-700:#174a84;
+    --azul-500:#2f78c4;
+    --azul-claro:#eaf3ff;
+    --branco:#ffffff;
+    --texto:#10243d;
+    --muted:#66758a;
+    --borda:#dbe3ed;
+    --fundo:#f5f8fc;
+    --sucesso:#168a4b;
+    --erro:#b42318;
+    --sombra:0 18px 50px rgba(7,28,56,.12);
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:100;
+    height:72px;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #dbe3ed;
+}
+
+.navbar .container{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+.navbar .logo{
+    display:flex;
+    align-items:center;
+    height:72px;
+    flex-shrink:0;
+}
+
+.navbar .logo img{
+    height:100px;
+    width:auto;
+    max-width:280px;
+    object-fit:contain;
+    display:block;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.acoes{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+@media(max-width:600px){
+    .logo img{
+        height:38px;
+        max-width:140px;
+    }
+    .navbar{
+    height:64px !important;
+}
+
+.navbar .container{
+    height:64px !important;
+    min-height:64px !important;
+}
+
+.navbar .logo{
+    width:150px !important;
+    height:50px !important;
+}
+
+.navbar .logo img{
+    width:100% !important;
+    height:100% !important;
+    max-width:150px !important;
+    max-height:50px !important;
+}
+}
+
+/* =========================================================
+   DASHBOARD DEVMIND
+========================================================= */
+
+.pagina-dashboard {
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(37, 99, 235, 0.12),
+            transparent 35%
+        ),
+        #f5f7fb;
+    color: #071c38;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   NAVBAR DO DASHBOARD
+========================================================= */
+
+.pagina-dashboard .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e6ebf2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+
+.navbar-container {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    color: #526176;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+
+.nav-links a:hover {
+    color: #103058;
+}
+
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
+
+.user-chip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #103058,
+            #2563eb
+        );
+
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(16, 48, 88, 0.2);
+}
+
+
+.usuario-resumo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+
+.usuario-resumo small {
+    color: #8a96a8;
+    font-size: 11px;
+}
+
+
+.usuario-resumo strong {
+    color: #071c38;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CONTAINER DASHBOARD
+========================================================= */
+
+.dashboard {
+    padding-top: 55px;
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   TOPO / BOAS-VINDAS
+========================================================= */
+
+.dash-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    margin-bottom: 38px;
+}
+
+
+.dash-boas-vindas h1 {
+    margin: 10px 0 10px;
+
+    font-size: clamp(
+        32px,
+        4vw,
+        48px
+    );
+
+    letter-spacing: -1.5px;
+    color: #071c38;
+}
+
+
+.dash-boas-vindas h1 span {
+    color: #103058;
+}
+
+
+.dash-boas-vindas p {
+    margin: 0;
+    color: #68768a;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ETIQUETAS
+========================================================= */
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 100px;
+
+    background: #e8eff8;
+
+    color: #103058;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.etiqueta.pequena {
+    padding: 5px 9px;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   CARDS DO DASHBOARD
+========================================================= */
+
+.dash-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 35px;
+}
+
+
+.pagina-dashboard .panel {
+    background: #ffffff;
+
+    border:
+        1px solid
+        #e8edf3;
+
+    border-radius: 18px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.pagina-dashboard .panel:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(15, 23, 42, 0.09);
+}
+
+
+.card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.card-topo h2,
+.panel-objetivo h2 {
+    margin: 9px 0 0;
+
+    color: #071c38;
+
+    font-size: 21px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.card-icone {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4fb,
+            #dce9f7
+        );
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   PROGRESSO
+========================================================= */
+
+.progresso-num {
+    font-size: 48px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    color: #103058;
+
+    margin-bottom: 12px;
+}
+
+
+.texto-secundario {
+    color: #7a8798;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.barra {
+    width: 100%;
+    height: 9px;
+
+    border-radius: 20px;
+
+    background: #e9eef4;
+
+    overflow: hidden;
+}
+
+
+.barra span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #103058,
+            #2563eb
+        );
+
+    transition: width 0.8s ease;
+}
+
+
+/* =========================================================
+   ACESSO
+========================================================= */
+
+.acesso-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.acesso-item {
+    padding-bottom: 14px;
+
+    border-bottom:
+        1px solid #edf1f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.acesso-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+.acesso-item small {
+    color: #8a96a8;
+    font-size: 12px;
+}
+
+
+.acesso-item strong {
+    color: #071c38;
+    font-size: 15px;
+}
+
+
+.status-acesso {
+    color: #15803d !important;
+}
+
+
+/* =========================================================
+   CARD OBJETIVO
+========================================================= */
+
+.panel-objetivo {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071c38,
+            #103058
+        ) !important;
+
+    border: none !important;
+
+    color: white;
+}
+
+
+.panel-objetivo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    top: -120px;
+    right: -90px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+
+.panel-objetivo .etiqueta {
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color: #bcd6f2;
+}
+
+
+.panel-objetivo h2 {
+    color: white;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+
+.panel-objetivo p {
+    color: #c7d3e0;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    margin-top: 15px;
+}
+
+
+.link-card {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+
+.link-card:hover {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   CURSO EM DESTAQUE
+========================================================= */
+
+.curso-dashboard {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 55px;
+
+    border-radius: 24px;
+
+    margin-bottom: 70px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071c38,
+            #103058
+        );
+
+    color: white;
+}
+
+
+.curso-dashboard::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    right: -250px;
+    bottom: -300px;
+
+    border:
+        80px solid
+        rgba(255, 255, 255, 0.03);
+}
+
+
+.curso-dashboard-info {
+    position: relative;
+    z-index: 2;
+}
+
+
+.curso-dashboard-info .etiqueta {
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color: #c7ddf3;
+}
+
+
+.curso-dashboard h2 {
+    margin: 18px 0;
+
+    font-size: clamp(
+        30px,
+        4vw,
+        45px
+    );
+
+    letter-spacing: -1px;
+
+    color: white;
+}
+
+
+.curso-dashboard p {
+    max-width: 580px;
+
+    color: #c4d0dd;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CÓDIGO VISUAL
+========================================================= */
+
+.curso-dashboard-visual {
+    position: relative;
+    z-index: 2;
+}
+
+
+.codigo-mini {
+    background:
+        rgba(3, 15, 31, 0.85);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.codigo-mini-topo {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 18px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+}
+
+
+.codigo-mini-topo span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #4d6580;
+}
+
+
+.codigo-mini pre {
+    margin: 0;
+
+    padding: 28px;
+
+    overflow-x: auto;
+}
+
+
+.codigo-mini code {
+    color: #b8d9ff;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    font-family:
+        Consolas,
+        Monaco,
+        monospace;
+}
+
+
+/* =========================================================
+   CABEÇALHO DOS MÓDULOS
+========================================================= */
+
+.dashboard-secao-cabecalho {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.dashboard-secao-cabecalho h2 {
+    margin: 12px 0 0;
+
+    font-size: 30px;
+
+    color: #071c38;
+}
+
+
+.link-ver-todos {
+    color: #103058;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LISTA DE MÓDULOS
+========================================================= */
+
+.lista-modulos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.modulo-dashboard {
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr auto;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 22px 24px;
+
+    background: white;
+
+    border:
+        1px solid #e8edf3;
+
+    border-radius: 16px;
+
+    transition:
+        0.25s ease;
+}
+
+
+.modulo-dashboard:hover {
+    border-color: #cddaea;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(15, 23, 42, 0.06);
+}
+
+
+.modulo-dashboard-numero {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #edf3fa;
+
+    color: #103058;
+
+    font-weight: 800;
+
+    font-size: 16px;
+}
+
+
+.modulo-dashboard-info span {
+    color: #8a96a8;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.modulo-dashboard-info h3 {
+    margin: 6px 0 7px;
+
+    color: #071c38;
+
+    font-size: 18px;
+}
+
+
+.modulo-dashboard-info p {
+    margin: 0;
+
+    color: #748195;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.modulo-dashboard.bloqueado {
+    opacity: 0.7;
+
+    background: #fafbfc;
+}
+
+
+.modulo-dashboard.bloqueado:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+.status-lock {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    background: #f1f3f6;
+
+    color: #7b8794;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.pagina-dashboard .btn {
+    text-decoration: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.pagina-dashboard .btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            #103058,
+            #174b85
+        );
+
+    border: none;
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px
+        rgba(16, 48, 88, 0.18);
+}
+
+
+.pagina-dashboard .btn-primary:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(16, 48, 88, 0.25);
+}
+
+
+.pagina-dashboard .btn-outline {
+    background: transparent;
+
+    border:
+        1px solid #dce3eb;
+
+    color: #071c38;
+}
+
+
+.btn-sair {
+    padding: 9px 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MENSAGEM DE ERRO
+========================================================= */
+
+.dashboard .mensagem.erro {
+    display: none;
+
+    margin-bottom: 25px;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    background: #fff0f0;
+
+    border:
+        1px solid #ffd4d4;
+
+    color: #b42318;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: white;
+
+    border:
+        1px dashed #d8e0ea;
+
+    color: #7b8796;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.footer-dashboard {
+    background: #06182f;
+
+    color: white;
+
+    padding: 50px 0;
+}
+
+
+.footer-dashboard .container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 2fr 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.logo-footer {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+
+.footer-dashboard p {
+    margin: 0;
+
+    color: #aab9c9;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.footer-dashboard span {
+    color: #7e91a5;
+
+    text-align: right;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .dash-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .panel-objetivo {
+        grid-column: span 2;
+    }
+
+
+    .curso-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-dashboard .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+
+    .footer-dashboard p,
+    .footer-dashboard span {
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar-container {
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .dash-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .dash-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .panel-objetivo {
+        grid-column: auto;
+    }
+
+
+    .curso-dashboard {
+        padding: 35px 25px;
+    }
+
+
+    .dashboard-secao-cabecalho {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .modulo-dashboard {
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .modulo-dashboard-acao {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+
+    .modulo-dashboard-acao .btn,
+    .status-lock {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .dashboard {
+        padding-top: 35px;
+    }
+
+
+    .usuario-resumo {
+        display: none;
+    }
+
+
+    .nav-links {
+        gap: 16px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .dash-boas-vindas h1 {
+        font-size: 34px;
+    }
+
+
+    .pagina-dashboard .panel {
+        padding: 22px;
+    }
+
+
+    .curso-dashboard h2 {
+        font-size: 32px;
+    }
+
+
+    .codigo-mini pre {
+        padding: 20px;
+    }
+
+}

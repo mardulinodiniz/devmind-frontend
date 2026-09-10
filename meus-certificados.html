@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Meus Certificados | DevMind</title>
+
+    <link
+        rel="stylesheet"
+        href="Css/meus-certificados.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="Css/certificados.css"
+    >
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="container">
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+            <img
+                src="assets/logo.png"
+                alt="DevMind"
+            >
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="curso.html?id=1">
+                Meu curso
+            </a>
+
+            <a href="perfil.html">
+                Perfil
+            </a>
+
+        </nav>
+
+        <div class="acoes">
+
+            <button
+                class="btn btn-outline"
+                onclick="sair()"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="certificados-hero">
+
+    <div class="container">
+
+        <span class="etiqueta">
+            CONQUISTAS
+        </span>
+
+        <h1>
+            Meus certificados
+        </h1>
+
+        <p>
+            Aqui ficam registrados os certificados
+            conquistados durante a sua jornada
+            na DevMind.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTEÚDO -->
+
+<main class="container certificados-container">
+
+
+    <!-- RESUMO -->
+
+    <section class="certificado-resumo">
+
+        <div>
+
+            <span class="etiqueta">
+                SUA JORNADA
+            </span>
+
+            <h2>
+                Cada conquista conta.
+            </h2>
+
+            <p>
+                Continue estudando, conclua os cursos
+                e transforme conhecimento em conquistas
+                que você poderá levar consigo.
+            </p>
+
+        </div>
+
+        <div class="certificado-contador">
+
+            <strong id="totalCertificados">
+                0
+            </strong>
+
+            <span>
+                certificados conquistados
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- LISTA -->
+
+    <section class="certificados-area">
+
+        <div class="secao-topo">
+
+            <div>
+
+                <span class="etiqueta">
+                    CERTIFICADOS
+                </span>
+
+                <h2>
+                    Suas conquistas
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="listaCertificados"
+            class="lista-certificados"
+        >
+
+            <div class="estado-vazio">
+
+                <div class="icone-certificado">
+                    🎓
+                </div>
+
+                <h3>
+                    Você ainda não possui certificados
+                </h3>
+
+                <p>
+                    Continue estudando e conclua um curso
+                    para conquistar o seu primeiro certificado.
+                </p>
+
+                <a
+                    href="curso.html?id=1"
+                    class="btn btn-primary"
+                >
+                    Continuar aprendendo
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRÓXIMA CONQUISTA -->
+
+    <section class="proxima-conquista">
+
+        <div class="conquista-icone">
+            ★
+        </div>
+
+        <div>
+
+            <span class="etiqueta">
+                PRÓXIMA CONQUISTA
+            </span>
+
+            <h2>
+                Seu primeiro certificado começa com uma aula.
+            </h2>
+
+            <p>
+                Não espere estar pronto. Comece,
+                pratique e evolua.
+            </p>
+
+        </div>
+
+        <a
+            href="curso.html?id=1"
+            class="btn btn-primary"
+        >
+            Continuar curso
+        </a>
+
+    </section>
+
+</main>
+
+
+<script src="js/api.js"></script>
+
+<script src="js/certificados.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Configurações | DevMind
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="Css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="Css/configuracoes.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="container">
+
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+
+            <img
+                src="assets/logo.png"
+                alt="DevMind"
+            >
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="curso.html?id=1">
+                Meu curso
+            </a>
+
+            <a href="perfil.html">
+                Perfil
+            </a>
+
+            <a
+                href="configuracoes.html"
+                class="ativo"
+            >
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <div class="acoes">
+
+            <button
+                class="btn btn-outline"
+                onclick="sair()"
+            >
+
+                Sair
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="config-hero">
+
+    <div class="container">
+
+        <span class="etiqueta">
+
+            MINHA CONTA
+
+        </span>
+
+
+        <h1>
+
+            Configurações
+
+        </h1>
+
+
+        <p>
+
+            Gerencie as informações
+            e a segurança da sua conta.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
+
+<main class="container config-container">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="config-sidebar">
+
+
+        <div class="config-menu">
+
+
+            <a href="perfil.html">
+
+                <span>
+                    ◈
+                </span>
+
+                Meu perfil
+
+            </a>
+
+
+            <a
+                href="configuracoes.html"
+                class="ativo"
+            >
+
+                <span>
+                    ⚙
+                </span>
+
+                Configurações
+
+            </a>
+
+
+            <a href="meu-progresso.html">
+
+                <span>
+                    ↗
+                </span>
+
+                Meu progresso
+
+            </a>
+
+
+            <a href="pagamentos.html">
+
+                <span>
+                    ◉
+                </span>
+
+                Pagamentos
+
+            </a>
+
+
+            <a href="meus-certificados.html">
+
+                <span>
+                    ★
+                </span>
+
+                Certificados
+
+            </a>
+
+
+        </div>
+
+
+        <div class="conta-resumo">
+
+
+            <span>
+
+                CONTA DE APRENDIZAGEM
+
+            </span>
+
+
+            <strong
+                id="nomeResumo"
+            >
+
+                Carregando...
+
+            </strong>
+
+
+            <p
+                id="emailResumo"
+            >
+
+                Carregando...
+
+            </p>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- CONTEÚDO -->
+
+    <section class="config-conteudo">
+
+
+        <!-- MENSAGEM -->
+
+        <div
+            id="mensagemConfiguracao"
+            class="mensagem-config"
+        ></div>
+
+
+
+        <!-- INFORMAÇÕES PESSOAIS -->
+
+        <section class="config-card">
+
+
+            <div class="config-card-header">
+
+                <div>
+
+                    <span class="etiqueta">
+
+                        PERFIL
+
+                    </span>
+
+
+                    <h2>
+
+                        Informações pessoais
+
+                    </h2>
+
+
+                    <p>
+
+                        Atualize os dados
+                        principais da sua conta.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="formPerfil">
+
+
+                <div class="form-grid">
+
+
+                    <div class="campo">
+
+                        <label for="nome">
+
+                            Nome completo
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="nome"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo">
+
+                        <label for="email">
+
+                            Email
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="btnSalvarPerfil"
+                >
+
+                    Salvar alterações
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- ALTERAR SENHA -->
+
+        <section class="config-card">
+
+
+            <div class="config-card-header">
+
+                <div>
+
+                    <span class="etiqueta">
+
+                        SEGURANÇA
+
+                    </span>
+
+
+                    <h2>
+
+                        Alterar senha
+
+                    </h2>
+
+
+                    <p>
+
+                        Use uma senha forte
+                        para proteger sua conta.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="formSenha">
+
+
+                <div class="campo">
+
+                    <label for="senhaAtual">
+
+                        Senha atual
+
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="senhaAtual"
+                        placeholder="Digite sua senha atual"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <div class="campo">
+
+                        <label for="novaSenha">
+
+                            Nova senha
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="novaSenha"
+                            placeholder="Digite a nova senha"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="campo">
+
+                        <label for="confirmarSenha">
+
+                            Confirmar nova senha
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            placeholder="Repita a nova senha"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="btnSalvarSenha"
+                >
+
+                    Alterar senha
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- CONTA -->
+
+        <section class="config-card conta-card">
+
+
+            <div class="config-card-header">
+
+                <div>
+
+                    <span class="etiqueta">
+
+                        CONTA
+
+                    </span>
+
+
+                    <h2>
+
+                        Informações da conta
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="conta-infos">
+
+
+                <div class="conta-info">
+
+                    <span>
+
+                        Tipo de conta
+
+                    </span>
+
+
+                    <strong
+                        id="tipoConta"
+                    >
+
+                        Aluno
+
+                    </strong>
+
+                </div>
+
+
+
+                <div class="conta-info">
+
+                    <span>
+
+                        Membro desde
+
+                    </span>
+
+
+                    <strong
+                        id="membroDesde"
+                    >
+
+                        Carregando...
+
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+
+<script src="js/configuracoes.js"></script>
+
+
+</body>
+
+</html>

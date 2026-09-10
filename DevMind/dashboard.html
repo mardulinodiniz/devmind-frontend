@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="pt"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Meu Dashboard | DevMind</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="navbar"><div class="container"><a class="logo" href="index.html">Dev<span>Mind</span></a><nav class="nav-links"><a href="index.html">Início</a><a href="curso.html?id=1">Meu curso</a><a href="sobre.html">Sobre</a></nav><div class="user-chip"><div class="avatar" id="avatarUsuario">A</div><strong id="nomeUsuario">Aluno</strong><button class="btn btn-outline" onclick="sair()">Sair</button></div></div></header>
+<main class="container dashboard"><div class="dash-top"><div><h1>Olá, <span id="nomeUsuario">Aluno</span> 👋</h1><p>Continue construindo o seu caminho para dominar a tecnologia.</p></div><a class="btn btn-primary" href="curso.html?id=1">Continuar curso</a></div>
+<div id="dashboardErro" class="mensagem erro"></div>
+<div class="dash-grid"><section class="panel"><h2>Seu progresso</h2><div class="progresso-num" id="percentual">0%</div><p id="aulasConcluidas">Carregando progresso...</p><div class="barra"><span id="barraProgresso"></span></div></section>
+<aside class="panel"><h2>Seu acesso</h2><div class="acesso-info"><div class="acesso-item"><small>Curso atual</small><strong id="cursoNome">Carregando...</strong></div><div class="acesso-item"><small>Módulo máximo liberado</small><strong id="moduloMaximo">...</strong></div><div class="acesso-item"><small>Status</small><strong id="statusAcesso">...</strong></div></div></aside></div>
+<section class="panel" style="margin-top:22px"><h2>Conteúdo do curso</h2><div id="listaModulos" class="lista-modulos"><div class="loading">Carregando módulos...</div></div></section>
+</main><script src="js/api.js"></script><script src="js/dashboard.js"></script></body></html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Módulo | DevMind</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="Css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <img
+                    src="assets/logo.png"
+                    alt="DevMind"
+                >
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a
+                    id="linkCurso"
+                    href="curso.html"
+                >
+                    Curso
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+            </nav>
+
+
+            <div class="acoes">
+
+                <button
+                    class="btn btn-sair"
+                    onclick="sair()"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO DO MÓDULO
+    ====================================================== -->
+
+    <section class="modulo-hero">
+
+
+        <div class="pagina-modulo modulo-hero-container">
+
+
+            <div class="modulo-breadcrumb">
+
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <span>›</span>
+
+
+                <a
+                    id="voltarCurso"
+                    href="curso.html"
+                >
+                    Curso
+                </a>
+
+                <span>›</span>
+
+                <span>
+                    Módulo
+                </span>
+
+
+            </div>
+
+
+            <span class="etiqueta">
+
+                DEVMIND • MÓDULO
+
+            </span>
+
+
+            <h1 id="tituloModulo">
+
+                Carregando módulo...
+
+            </h1>
+
+
+            <p id="descricaoModulo">
+
+                Aguarde enquanto carregamos
+                o conteúdo deste módulo.
+
+            </p>
+
+
+            <div class="modulo-hero-info">
+
+
+                <div>
+
+                    <span>
+                        📚
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Conteúdo
+                        </small>
+
+                        <strong>
+                            Aulas organizadas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        🎯
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Objetivo
+                        </small>
+
+                        <strong>
+                            Evoluir passo a passo
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="pagina-modulo">
+
+
+        <section class="aulas-secao">
+
+
+            <div class="secao-cabecalho">
+
+
+                <div>
+
+
+                    <span class="etiqueta">
+
+                        CONTEÚDO DO MÓDULO
+
+                    </span>
+
+
+                    <h2>
+
+                        Escolha uma aula
+                        e continue aprendendo.
+
+                    </h2>
+
+
+                    <p>
+
+                        Siga a sequência das aulas
+                        para aproveitar melhor
+                        o conteúdo deste módulo.
+
+                    </p>
+
+
+                </div>
+
+
+                <a
+                    id="botaoVoltarCurso"
+                    href="curso.html"
+                    class="btn-voltar"
+                >
+
+                    ← Voltar ao curso
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 LISTA DE AULAS
+            ============================================== -->
+
+            <div
+                id="listaAulas"
+                class="lista-aulas"
+            >
+
+
+                <div class="carregando">
+
+                    Carregando aulas...
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHAMADA FINAL
+        ================================================== -->
+
+        <section class="modulo-cta">
+
+
+            <div>
+
+
+                <span class="etiqueta">
+
+                    CONSTÂNCIA
+
+                </span>
+
+
+                <h2>
+
+                    Uma aula de cada vez.
+
+                </h2>
+
+
+                <p>
+
+                    Não tente aprender tudo de uma vez.
+                    Estude, pratique e avance.
+                    O conhecimento é construído passo a passo.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="btn-cta"
+            >
+
+                Ir para o Dashboard
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="footer-modulo">
+
+
+        <div class="pagina-modulo footer-container">
+
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+
+                DevMind
+
+            </a>
+
+
+            <p>
+
+                Desenvolva a mente.
+                Construa o caminho para dominar a tecnologia.
+
+            </p>
+
+
+            <span>
+
+                © 2026 DevMind
+
+            </span>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/modulo.js"></script>
+
+
+</body>
+
+</html>

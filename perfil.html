@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Meu Perfil | DevMind
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="Css/perfil.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="container">
+
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+
+            <img
+                src="assets/logo.png"
+                alt="DevMind"
+            >
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="curso.html?id=1">
+                Meu curso
+            </a>
+
+            <a
+                href="perfil.html"
+                class="ativo"
+            >
+                Perfil
+            </a>
+
+        </nav>
+
+
+        <div class="acoes">
+
+            <button
+                class="btn btn-outline"
+                onclick="sair()"
+            >
+
+                Sair
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO DO PERFIL
+===================================================== -->
+
+<section class="perfil-hero">
+
+    <div class="container">
+
+
+        <span class="etiqueta">
+
+            MINHA CONTA
+
+        </span>
+
+
+        <h1>
+
+            Meu perfil
+
+        </h1>
+
+
+        <p>
+
+            Gerencie suas informações
+            e acompanhe sua jornada
+            na DevMind.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
+
+<main
+    class="container perfil-container"
+>
+
+
+    <!-- ================================================
+         COLUNA ESQUERDA
+    ================================================= -->
+
+    <aside class="perfil-sidebar">
+
+
+        <div class="perfil-card">
+
+
+            <!-- AVATAR -->
+
+            <div
+                class="perfil-avatar"
+                id="avatarPerfil"
+            >
+
+                A
+
+            </div>
+
+
+            <!-- NOME -->
+
+            <h2
+                id="nomePerfil"
+            >
+
+                Carregando...
+
+            </h2>
+
+
+            <!-- EMAIL -->
+
+            <p
+                class="perfil-email"
+                id="emailPerfil"
+            >
+
+                Carregando...
+
+            </p>
+
+
+            <!-- TIPO -->
+
+            <span
+                class="perfil-tipo"
+                id="tipoPerfil"
+            >
+
+                Aluno
+
+            </span>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                class="btn btn-primary btn-perfil"
+                onclick="editarPerfil()"
+            >
+
+                Editar perfil
+
+            </button>
+
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <div class="perfil-menu">
+
+
+            <a href="dashboard.html">
+
+                <span>
+                    ◈
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="curso.html?id=1">
+
+                <span>
+                    ▶
+                </span>
+
+                Meu curso
+
+            </a>
+
+
+            <a href="meu-progresso.html">
+
+                <span>
+                    ↗
+                </span>
+
+                Meu progresso
+
+            </a>
+
+
+            <a href="pagamentos.html">
+
+                <span>
+                    ◉
+                </span>
+
+                Pagamentos
+
+            </a>
+
+
+            <a
+                href="configuracoes.html"
+            >
+
+                <span>
+                    ⚙
+                </span>
+
+                Configurações
+
+            </a>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+    ================================================= -->
+
+    <section class="perfil-conteudo">
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="panel">
+
+
+            <div
+                class="panel-header"
+            >
+
+                <div>
+
+                    <span class="etiqueta">
+
+                        INFORMAÇÕES
+
+                    </span>
+
+
+                    <h2>
+
+                        Informações pessoais
+
+                    </h2>
+
+
+                </div>
+
+
+                <button
+                    class="btn btn-outline"
+                    onclick="editarPerfil()"
+                >
+
+                    Editar
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                class="perfil-informacoes"
+            >
+
+
+                <div
+                    class="info-item"
+                >
+
+                    <span>
+
+                        Nome completo
+
+                    </span>
+
+
+                    <strong
+                        id="infoNome"
+                    >
+
+                        Carregando...
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <div
+                    class="info-item"
+                >
+
+                    <span>
+
+                        Email
+
+                    </span>
+
+
+                    <strong
+                        id="infoEmail"
+                    >
+
+                        Carregando...
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <div
+                    class="info-item"
+                >
+
+                    <span>
+
+                        Tipo de conta
+
+                    </span>
+
+
+                    <strong
+                        id="infoTipo"
+                    >
+
+                        Aluno
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <div
+                    class="info-item"
+                >
+
+                    <span>
+
+                        Membro desde
+
+                    </span>
+
+
+                    <strong
+                        id="dataCadastro"
+                    >
+
+                        Carregando...
+
+                    </strong>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <section
+            class="perfil-estatisticas"
+        >
+
+
+            <article
+                class="perfil-estatistica"
+            >
+
+                <span>
+
+                    CURSO ATUAL
+
+                </span>
+
+
+                <strong
+                    id="cursoAtual"
+                >
+
+                    DevMind
+
+                </strong>
+
+
+            </article>
+
+
+
+            <article
+                class="perfil-estatistica"
+            >
+
+                <span>
+
+                    PROGRESSO
+
+                </span>
+
+
+                <strong
+                    id="progressoPerfil"
+                >
+
+                    0%
+
+                </strong>
+
+
+            </article>
+
+
+
+            <article
+                class="perfil-estatistica"
+            >
+
+                <span>
+
+                    AULAS CONCLUÍDAS
+
+                </span>
+
+
+                <strong
+                    id="aulasPerfil"
+                >
+
+                    0
+
+                </strong>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- JORNADA -->
+
+        <div
+            class="panel jornada-card"
+        >
+
+
+            <span class="etiqueta">
+
+                SUA JORNADA
+
+            </span>
+
+
+            <h2>
+
+                Continue evoluindo.
+
+            </h2>
+
+
+            <p>
+
+                Cada aula concluída é um
+                passo a mais na construção
+                do seu caminho para dominar
+                a tecnologia.
+
+            </p>
+
+
+            <div
+                class="barra-progresso-perfil"
+            >
+
+                <span
+                    id="barraPerfil"
+                ></span>
+
+            </div>
+
+
+            <div
+                class="jornada-footer"
+            >
+
+                <span
+                    id="textoProgresso"
+                >
+
+                    Carregando progresso...
+
+                </span>
+
+
+                <a
+                    href="curso.html?id=1"
+                    class="btn btn-primary"
+                >
+
+                    Continuar aprendendo
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/perfil.js"></script>
+
+
+</body>
+
+</html>

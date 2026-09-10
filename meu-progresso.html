@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Meu Progresso | DevMind
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="Css/meu-progresso.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="Css/progresso.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="container">
+
+
+        <a
+            class="logo"
+            href="index.html"
+        >
+
+            <img
+                src="assets/logo.png"
+                alt="DevMind"
+            >
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="curso.html?id=1">
+                Meu curso
+            </a>
+
+            <a href="perfil.html">
+                Perfil
+            </a>
+
+            <a href="configuracoes.html">
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <div class="acoes">
+
+            <button
+                class="btn btn-outline"
+                onclick="sair()"
+            >
+                Sair
+            </button>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="progresso-hero">
+
+    <div class="container">
+
+        <span class="etiqueta">
+
+            SUA EVOLUÇÃO
+
+        </span>
+
+
+        <h1>
+
+            Meu progresso
+
+        </h1>
+
+
+        <p>
+
+            Acompanhe a sua evolução e continue
+            construindo o caminho para dominar
+            a tecnologia.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
+
+<main class="container progresso-container">
+
+
+    <!-- =================================================
+         RESUMO PRINCIPAL
+    ================================================= -->
+
+    <section class="progresso-principal">
+
+
+        <div class="progresso-resumo">
+
+
+            <span class="etiqueta">
+
+                PROGRESSO GERAL
+
+            </span>
+
+
+            <h2>
+
+                Sua jornada de aprendizagem
+
+            </h2>
+
+
+            <p>
+
+                Você está avançando passo a passo.
+                Continue aprendendo e desenvolvendo
+                novas competências.
+
+            </p>
+
+
+            <div class="progresso-numero">
+
+                <strong
+                    id="percentualGeral"
+                >
+
+                    0%
+
+                </strong>
+
+                <span>
+
+                    concluído
+
+                </span>
+
+            </div>
+
+
+            <div class="barra-progresso-grande">
+
+                <span
+                    id="barraProgressoGeral"
+                ></span>
+
+            </div>
+
+
+            <div class="progresso-detalhes">
+
+                <span>
+
+                    <strong
+                        id="aulasConcluidas"
+                    >
+                        0
+                    </strong>
+
+                    aulas concluídas
+
+                </span>
+
+
+                <span>
+
+                    <strong
+                        id="totalAulas"
+                    >
+                        0
+                    </strong>
+
+                    aulas no total
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- CONTINUAR ESTUDANDO -->
+
+        <div class="continuar-card">
+
+
+            <span class="etiqueta">
+
+                CONTINUE DE ONDE PAROU
+
+            </span>
+
+
+            <h3
+                id="ultimaAulaTitulo"
+            >
+
+                Nenhuma aula iniciada
+
+            </h3>
+
+
+            <p
+                id="ultimaAulaDescricao"
+            >
+
+                Comece a sua primeira aula
+                para iniciar a sua jornada.
+
+            </p>
+
+
+            <a
+                id="btnContinuar"
+                href="curso.html?id=1"
+                class="btn btn-primary"
+            >
+
+                Começar agora
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ESTATÍSTICAS
+    ================================================= -->
+
+    <section class="progresso-estatisticas">
+
+
+        <div class="progresso-estatistica">
+
+            <span>
+                ✓
+            </span>
+
+            <div>
+
+                <small>
+                    CONCLUÍDAS
+                </small>
+
+                <strong
+                    id="statConcluidas"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="progresso-estatistica">
+
+            <span>
+                ◷
+            </span>
+
+            <div>
+
+                <small>
+                    RESTANTES
+                </small>
+
+                <strong
+                    id="statRestantes"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="progresso-estatistica">
+
+            <span>
+                ◆
+            </span>
+
+            <div>
+
+                <small>
+                    MÓDULOS
+                </small>
+
+                <strong
+                    id="totalModulos"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROGRESSO POR MÓDULO
+    ================================================= -->
+
+    <section class="progresso-modulos-card">
+
+
+        <div class="secao-topo">
+
+            <div>
+
+                <span class="etiqueta">
+
+                    APRENDIZAGEM
+
+                </span>
+
+
+                <h2>
+
+                    Progresso por módulo
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Veja a sua evolução
+                em cada etapa do curso.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            id="listaProgressoModulos"
+            class="lista-progresso-modulos"
+        >
+
+            <div class="carregando">
+
+                Carregando progresso...
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/progresso.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<link
+    rel="icon"
+    type="image/png"
+    href="assets/favicon.png"
+>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DevMind | Domine a Tecnologia</title><link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container">
+
+        <a class="logo" href="index.html">
+            <img src="assets/logo.png" alt="DevMind">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="#cursos">Cursos</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+
+        <div class="acoes" id="acoesUsuario">
+            <a class="btn btn-outline" href="login.html">Entrar</a>
+            <a class="btn btn-primary" href="cadastro.html">Criar conta</a>
+        </div>
+
+    </div>
+</header>
+
+
+<section class="hero"><div class="container hero-grid">
+<div>
+<span class="etiqueta">APRENDA • PRATIQUE • EVOLUA</span>
+<h1>Desenvolva a mente.<br>
+    <span>Domine a tecnologia.</span>
+</h1>
+<p>Construa conhecimentos reais em programação e tecnologia através de aulas organizadas, prática e evolução contínua.</p>
+<div class="hero-actions"><a class="btn btn-light" href="#cursos">Explorar cursos</a>
+    <a class="btn btn-outline" style="border-color:rgba(255,255,255,.25);color:white;background:transparent" href="cadastro.html">Começar gratuitamente</a></div>
+</div>
+<div class="hero-card"><div class="code-top"><span></span><span></span><span></span></div><pre><code>function construirFuturo() {
+    const mente = aprender();
+    const caminho = praticar();
+
+    return mente + caminho;
+}</code></pre></div>
+</div></section>
+
+<section class="section" id="cursos"><div class="container">
+<div class="section-head">
+    <div>
+        <span class="etiqueta" style="background:var(--azul-claro);color:var(--azul-700)">NOSSOS CURSOS</span>
+        <h2>Escolha o seu próximo passo.</h2>
+    </div>
+<p>Uma jornada organizada para sair da teoria e desenvolver competências que você pode aplicar.</p></div>
+<div id="listaCursos" class="grid-cursos">
+    <div class="loading">Carregando cursos...</div>
+</div>
+</div>
+</section>
+
+<section class="section sobre">
+    <div class="container sobre-grid">
+<div>
+    <img class="foto-fundador" src="assets/mardulino-dinis.png" alt="Mardulino Dinis, fundador da DevMind">
+</div>
+<div>
+<span class="etiqueta" style="background:var(--azul-claro);color:var(--azul-700)">QUEM ESTÁ POR TRÁS</span>
+<h2>Conhecimento com propósito transforma caminhos.</h2>
+<p>Olá, sou <strong>Mardulino Dinis</strong>, fundador da DevMind, programador e estudante de Engenharia Informática. Acredito que aprender tecnologia deve ser uma experiência prática, organizada e capaz de abrir novos caminhos.</p>
+<p>A DevMind nasce com a missão de ajudar estudantes e futuros profissionais a desenvolver competências reais e construir, passo a passo, o seu caminho para dominar a tecnologia.</p>
+<div class="assinatura">Mardulino Dinis</div><div class="cargo">Fundador da DevMind | Programador e estudante de Engenharia Informática</div>
+<div class="stats"><div class="stat"><strong>Prática</strong><span>Aprender fazendo</span></div><div class="stat"><strong>Clareza</strong><span>Do básico ao avançado</span></div><div class="stat"><strong>Evolução</strong><span>Um passo de cada vez</span></div></div>
+</div></div></section>
+
+<footer class="footer"><div class="container footer-grid">
+<div>
+    <a href="index.html" class="logo-footer">
+        <img src="assets/logo-footer.png" alt="DevMind">
+    </a>
+
+    <p>
+        Desenvolva a mente. Construa o caminho para dominar a tecnologia.
+    </p>
+</div>
+<div>
+    <h4>Plataforma</h4>
+    <ul>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="login.html">Entrar</a></li>
+        <li><a href="cadastro.html">Criar conta</a></li><li><a href="sobre.html">Sobre a DevMind</a></li></ul></div>
+<div>
+    <h4>Fundador</h4
+        ><ul>
+            <li>Mardulino Dinis</li>
+            <li>941 533 107 / 953 508 904</li>
+            <li>Facebook: Mardulino Dinis</li>
+            <li>YouTube: Mardulino Dinis</li>
+        </ul>
+    </div>
+</div>
+<div class="container footer-bottom">
+    <span>© 2026 DevMind. Todos os direitos reservados.</span>
+    <span>Construído por Mardulino Dinis.</span>
+</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
+
+<script>
+
+const acoes = document.getElementById('acoesUsuario');
+
+if (usuarioLogado()) {
+
+    const u = obterUsuario();
+
+    let botoes = `
+        <a
+            class="btn btn-outline"
+            href="dashboard.html"
+        >
+            ${u?.nome?.split(' ')[0] || 'Minha conta'}
+        </a>
+    `;
+
+
+    /*
+    ==========================================
+    ÁREA DO ADMINISTRADOR
+    ==========================================
+    */
+
+    if (u?.tipo === 'admin') {
+
+        botoes += `
+            <a
+                class="btn btn-outline"
+                href="admin.html"
+            >
+                Administração
+            </a>
+
+            <a
+                class="btn btn-outline"
+                href="pagamentos.html"
+            >
+                Pagamentos
+            </a>
+        `;
+
+    }
+
+
+    /*
+    ==========================================
+    SAIR
+    ==========================================
+    */
+
+    botoes += `
+        <button
+            class="btn btn-primary"
+            onclick="sair()"
+        >
+            Sair
+        </button>
+    `;
+
+
+    acoes.innerHTML = botoes;
+
+}
+
+</script>
+</body></html>

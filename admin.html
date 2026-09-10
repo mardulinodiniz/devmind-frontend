@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Administrador | DevMind</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <img
+                    src="assets/logo.png"
+                    alt="DevMind"
+                >
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="curso.html?id=1">
+                    Curso
+                </a>
+
+            </nav>
+
+
+            <div class="admin-user">
+
+                <div
+                    class="admin-avatar"
+                    id="adminAvatar"
+                >
+                    A
+                </div>
+
+
+                <div class="admin-user-info">
+
+                    <small>
+                        ADMINISTRADOR
+                    </small>
+
+                    <strong
+                        id="adminNome"
+                    >
+                        Carregando...
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="btn-sair"
+                    onclick="sair()"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="admin-main container">
+
+
+        <!-- =================================================
+             CABEÇALHO
+        ================================================== -->
+
+        <section class="admin-hero">
+
+
+            <div>
+
+
+                <span class="etiqueta">
+
+                    PAINEL DE CONTROLE
+
+                </span>
+
+
+                <h1>
+
+                    Gestão da
+                    <span>DevMind.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Gerencie alunos, controle o acesso aos
+                    módulos e acompanhe o crescimento da sua
+                    plataforma de ensino.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="admin-status">
+
+
+                <div class="status-ponto"></div>
+
+
+                <span>
+
+                    Sistema operacional
+
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MENSAGEM DE ERRO
+        ================================================== -->
+
+        <div
+            id="adminMensagem"
+            class="admin-mensagem"
+        ></div>
+
+
+
+        <!-- =================================================
+             ESTATÍSTICAS
+        ================================================== -->
+
+        <section class="estatisticas">
+
+
+            <article class="estatistica-card">
+
+                <div class="estatistica-icone">
+                    👥
+                </div>
+
+
+                <div>
+
+                    <small>
+                        ALUNOS
+                    </small>
+
+                    <strong
+                        id="totalAlunos"
+                    >
+                        --
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="estatistica-card">
+
+                <div class="estatistica-icone">
+                    📚
+                </div>
+
+
+                <div>
+
+                    <small>
+                        MÓDULOS
+                    </small>
+
+                    <strong
+                        id="totalModulos"
+                    >
+                        --
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="estatistica-card">
+
+                <div class="estatistica-icone">
+                    ▶
+                </div>
+
+
+                <div>
+
+                    <small>
+                        AULAS
+                    </small>
+
+                    <strong
+                        id="totalAulas"
+                    >
+                        --
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="estatistica-card">
+
+                <div class="estatistica-icone">
+                    🔓
+                </div>
+
+
+                <div>
+
+                    <small>
+                        ACESSOS ATIVOS
+                    </small>
+
+                    <strong
+                        id="totalAcessos"
+                    >
+                        --
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             GESTÃO DE ACESSO
+        ================================================== -->
+
+        <section class="admin-grid">
+
+
+            <section class="admin-card acesso-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <span class="etiqueta etiqueta-clara">
+
+                            ACESSO DO ALUNO
+
+                        </span>
+
+
+                        <h2>
+
+                            Liberar módulos
+
+                        </h2>
+
+
+                        <p>
+
+                            Defina até qual módulo
+                            cada aluno pode acessar.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-icone">
+
+                        🔐
+
+                    </div>
+
+
+                </div>
+
+
+
+                <form id="formAcesso">
+
+
+                    <div class="campo">
+
+
+                        <label for="usuarioId">
+
+                            ID do aluno
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="usuarioId"
+                            placeholder="Exemplo: 2"
+                            min="1"
+                            required
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="campo">
+
+
+                        <label for="moduloMaximo">
+
+                            Módulo máximo liberado
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="moduloMaximo"
+                            placeholder="Exemplo: 3"
+                            min="1"
+                            required
+                        >
+
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="btn-principal"
+                        id="btnAtualizarAcesso"
+                    >
+
+                        Atualizar acesso
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+            </section>
+
+
+
+            <!-- =============================================
+                 AÇÕES RÁPIDAS
+            ============================================== -->
+
+            <section class="admin-card acoes-card">
+
+
+                <span class="etiqueta etiqueta-clara">
+
+                    GESTÃO RÁPIDA
+
+                </span>
+
+
+                <h2>
+
+                    Ações da plataforma
+
+                </h2>
+
+
+                <div class="acoes-rapidas">
+
+
+                    <a
+                        href="curso.html?id=1"
+                        class="acao-rapida"
+                    >
+
+                        <span>
+                            📚
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Ver curso
+                            </strong>
+
+                            <small>
+                                Visualizar módulos
+                            </small>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+
+
+                    <a
+                        href="dashboard.html"
+                        class="acao-rapida"
+                    >
+
+                        <span>
+                            📊
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Dashboard
+                            </strong>
+
+                            <small>
+                                Visualizar plataforma
+                            </small>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+
+
+                    <a
+                        href="index.html"
+                        class="acao-rapida"
+                    >
+
+                        <span>
+                            🏠
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Página inicial
+                            </strong>
+
+                            <small>
+                                Visualizar como aluno
+                            </small>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SISTEMA
+        ================================================== -->
+
+        <section class="admin-card sistema-card">
+
+
+            <div>
+
+
+                <span class="etiqueta etiqueta-clara">
+
+                    SISTEMA
+
+                </span>
+
+
+                <h2>
+
+                    Status do administrador
+
+                </h2>
+
+
+                <p>
+
+                    Verificação da ligação entre
+                    o painel administrativo e o backend.
+
+                </p>
+
+
+            </div>
+
+
+            <div
+                class="sistema-status"
+                id="statusSistema"
+            >
+
+                <span class="status-loader"></span>
+
+                Verificando...
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/admin.js"></script>
+
+
+</body>
+
+</html>
