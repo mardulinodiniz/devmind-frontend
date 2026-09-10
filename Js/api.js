@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://devmind-backend-2phy.onrender.com/api';
 
 async function requisicao(endpoint, opcoes = {}) {
     const token = localStorage.getItem('token');
