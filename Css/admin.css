@@ -99,12 +99,19 @@ body {
 }
 
 
-.logo img {
+.navbar .logo{
+    display:flex;
+    align-items:center;
+    height:72px;
+    flex-shrink:0;
+}
 
-    max-width: 170px;
-
-    display: block;
-
+.navbar .logo img{
+    height:100px;
+    width:auto;
+    max-width:280px;
+    object-fit:contain;
+    display:block;
 }
 
 

@@ -59,10 +59,57 @@
     gap:24px;
 }
 
+.navbar nav a{
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    color:#526277;
+    transition:.2s;
+}
+
+.navbar nav a:hover{
+    color:var(--azul-700);
+}
+
+/* AÇÕES */
+
 .acoes{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap: 10px;
+}
+
+.btn-login{
+    padding:11px 20px;
+
+    border:0;
+    border-radius:9px;
+
+    background:var(--azul-800);
+    color:#fff;
+
+    font-weight:700;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-login:hover{
+    background:var(--azul-900);
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration: none;
+    transition:.2s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    text-decoration: underline;
 }
 
 @media(max-width:600px){
@@ -97,6 +144,12 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1c2b3a;
+}
 
 /* =========================================================
    HERO
@@ -125,6 +178,7 @@
     font-size: 46px;
 
     color: white;
+    padding-left: 40px;
 
 }
 
@@ -139,20 +193,16 @@
         rgba(255, 255, 255, 0.75);
 
     line-height: 1.7;
+    padding-left: 40px;
 
 }
 
 
 .progresso-hero .etiqueta {
 
-    background:
-        rgba(255, 255, 255, 0.12);
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.18);
-
-    color: white;
+    background:rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-left: 40px;
 
 }
 
