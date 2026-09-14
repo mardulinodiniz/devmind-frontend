@@ -1,5 +1,5 @@
-/*const API_URL = 'https://devmind-backend-2phy.onrender.com/api';*/
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://devmind-backend-2phy.onrender.com/api';
+/*const API_URL = 'http://localhost:3000/api';*/
 
 
 async function requisicao(endpoint, opcoes = {}) {
